@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\BuildingBlocks\Farlo.EventContracts\Farlo.EventContracts.csproj" />
-    <ProjectReference Include="..\Farlo.GeoData.Application\Farlo.GeoData.Application.csproj" />
-    <ProjectReference Include="..\Farlo.GeoData.Domain\Farlo.GeoData.Domain.csproj" />
+    <ProjectReference Include="..\Farlo.AI.Application\Farlo.AI.Application.csproj" />
   </ItemGroup>
 
 </Project>

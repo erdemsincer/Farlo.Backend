@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Farlo.GeoData.API.Controllers
+namespace Farlo.AI.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

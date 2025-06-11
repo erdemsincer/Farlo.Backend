@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Farlo.GeoData.Infrastructure\Farlo.GeoData.Infrastructure.csproj" />
+    <ProjectReference Include="..\Farlo.AI.Application\Farlo.AI.Application.csproj" />
+    <ProjectReference Include="..\Farlo.AI.Infrastructure\Farlo.AI.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

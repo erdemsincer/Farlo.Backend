@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MassTransit" Version="8.4.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Farlo.EventContracts\Farlo.EventContracts.csproj" />
-    <ProjectReference Include="..\Farlo.GeoData.Application\Farlo.GeoData.Application.csproj" />
-    <ProjectReference Include="..\Farlo.GeoData.Domain\Farlo.GeoData.Domain.csproj" />
   </ItemGroup>
 
 </Project>

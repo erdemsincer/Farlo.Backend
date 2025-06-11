@@ -31,6 +31,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Shared", "BuildingBlo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.EventContracts", "BuildingBlocks\Farlo.EventContracts\Farlo.EventContracts.csproj", "{1B67FF98-9373-4AD4-9C01-B92A8D1759FE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3204F54-EB3B-4B29-BA92-38619C2FF10F}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.AI.API", "Services\Farlo.AIService\Farlo.AI.API\Farlo.AI.API.csproj", "{0A9BE450-D667-4C92-AE32-D8CC61BB9E77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.AI.Application", "Services\Farlo.AIService\Farlo.AI.Application\Farlo.AI.Application.csproj", "{C830351F-B8CF-4AEC-8E46-BB145BF3B085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.AI.Infrastructure", "Services\Farlo.AIService\Farlo.AI.Infrastructure\Farlo.AI.Infrastructure.csproj", "{4E0A2C2D-5DB9-46C8-A18C-F701BEEC2188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.AI.Domain", "Services\Farlo.AI.Domain\Farlo.AI.Domain\Farlo.AI.Domain.csproj", "{B63B2626-D190-4C71-A82D-D7D75FA9ACAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +74,22 @@ Global
 		{1B67FF98-9373-4AD4-9C01-B92A8D1759FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B67FF98-9373-4AD4-9C01-B92A8D1759FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B67FF98-9373-4AD4-9C01-B92A8D1759FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9BE450-D667-4C92-AE32-D8CC61BB9E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9BE450-D667-4C92-AE32-D8CC61BB9E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9BE450-D667-4C92-AE32-D8CC61BB9E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9BE450-D667-4C92-AE32-D8CC61BB9E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C830351F-B8CF-4AEC-8E46-BB145BF3B085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C830351F-B8CF-4AEC-8E46-BB145BF3B085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C830351F-B8CF-4AEC-8E46-BB145BF3B085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C830351F-B8CF-4AEC-8E46-BB145BF3B085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E0A2C2D-5DB9-46C8-A18C-F701BEEC2188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E0A2C2D-5DB9-46C8-A18C-F701BEEC2188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E0A2C2D-5DB9-46C8-A18C-F701BEEC2188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E0A2C2D-5DB9-46C8-A18C-F701BEEC2188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63B2626-D190-4C71-A82D-D7D75FA9ACAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63B2626-D190-4C71-A82D-D7D75FA9ACAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63B2626-D190-4C71-A82D-D7D75FA9ACAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63B2626-D190-4C71-A82D-D7D75FA9ACAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +107,10 @@ Global
 		{D63135B0-E1E2-4202-A244-A2B7A4E3A4B9} = {633B1C2E-7A95-40B8-BF0E-645969D695A3}
 		{89DE9DD4-D28A-4C2A-B5E6-C99863C39EDC} = {52118A9E-A966-4469-A750-7F2E9D58266C}
 		{1B67FF98-9373-4AD4-9C01-B92A8D1759FE} = {52118A9E-A966-4469-A750-7F2E9D58266C}
+		{0A9BE450-D667-4C92-AE32-D8CC61BB9E77} = {D1B68A84-FEDB-4383-A1B6-4D31DA06D4F8}
+		{C830351F-B8CF-4AEC-8E46-BB145BF3B085} = {D1B68A84-FEDB-4383-A1B6-4D31DA06D4F8}
+		{4E0A2C2D-5DB9-46C8-A18C-F701BEEC2188} = {D1B68A84-FEDB-4383-A1B6-4D31DA06D4F8}
+		{B63B2626-D190-4C71-A82D-D7D75FA9ACAD} = {D1B68A84-FEDB-4383-A1B6-4D31DA06D4F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {156EEC8B-AAC3-4DDC-B29C-AA8912887B9A}
