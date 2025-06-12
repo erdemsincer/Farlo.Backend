@@ -19,30 +19,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Farlo.EventBus", "Farlo.Eve
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{52118A9E-A966-4469-A750-7F2E9D58266C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.GeoData.API", "Services\Farlo.GeoDataService\Farlo.GeoData.API\Farlo.GeoData.API.csproj", "{8F978A69-CCDE-4A6E-80B3-5BFB3ED750BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.GeoData.API", "Services\Farlo.GeoDataService\Farlo.GeoData.API\Farlo.GeoData.API.csproj", "{8F978A69-CCDE-4A6E-80B3-5BFB3ED750BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.GeoData.Application", "Services\Farlo.GeoDataService\Farlo.GeoData.Application\Farlo.GeoData.Application.csproj", "{A8739157-4A7C-4F85-934A-778B36468BCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.GeoData.Application", "Services\Farlo.GeoDataService\Farlo.GeoData.Application\Farlo.GeoData.Application.csproj", "{A8739157-4A7C-4F85-934A-778B36468BCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.GeoData.Domain", "Services\Farlo.GeoDataService\Farlo.GeoData.Domain\Farlo.GeoData.Domain.csproj", "{5803BA7A-7DCA-43E8-BB1C-C263A4C53C80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.GeoData.Domain", "Services\Farlo.GeoDataService\Farlo.GeoData.Domain\Farlo.GeoData.Domain.csproj", "{5803BA7A-7DCA-43E8-BB1C-C263A4C53C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.GeoData.Infrastructure", "Services\Farlo.GeoDataService\Farlo.GeoData.Infrastructure\Farlo.GeoData.Infrastructure.csproj", "{D63135B0-E1E2-4202-A244-A2B7A4E3A4B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.GeoData.Infrastructure", "Services\Farlo.GeoDataService\Farlo.GeoData.Infrastructure\Farlo.GeoData.Infrastructure.csproj", "{D63135B0-E1E2-4202-A244-A2B7A4E3A4B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Shared", "BuildingBlocks\Farlo.Shared\Farlo.Shared.csproj", "{89DE9DD4-D28A-4C2A-B5E6-C99863C39EDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Shared", "BuildingBlocks\Farlo.Shared\Farlo.Shared.csproj", "{89DE9DD4-D28A-4C2A-B5E6-C99863C39EDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.EventContracts", "BuildingBlocks\Farlo.EventContracts\Farlo.EventContracts.csproj", "{1B67FF98-9373-4AD4-9C01-B92A8D1759FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.EventContracts", "BuildingBlocks\Farlo.EventContracts\Farlo.EventContracts.csproj", "{1B67FF98-9373-4AD4-9C01-B92A8D1759FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3204F54-EB3B-4B29-BA92-38619C2FF10F}"
 	ProjectSection(SolutionItems) = preProject
+		.env = .env
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.AI.API", "Services\Farlo.AIService\Farlo.AI.API\Farlo.AI.API.csproj", "{0A9BE450-D667-4C92-AE32-D8CC61BB9E77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.AI.API", "Services\Farlo.AIService\Farlo.AI.API\Farlo.AI.API.csproj", "{0A9BE450-D667-4C92-AE32-D8CC61BB9E77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.AI.Application", "Services\Farlo.AIService\Farlo.AI.Application\Farlo.AI.Application.csproj", "{C830351F-B8CF-4AEC-8E46-BB145BF3B085}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.AI.Application", "Services\Farlo.AIService\Farlo.AI.Application\Farlo.AI.Application.csproj", "{C830351F-B8CF-4AEC-8E46-BB145BF3B085}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.AI.Infrastructure", "Services\Farlo.AIService\Farlo.AI.Infrastructure\Farlo.AI.Infrastructure.csproj", "{4E0A2C2D-5DB9-46C8-A18C-F701BEEC2188}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.AI.Infrastructure", "Services\Farlo.AIService\Farlo.AI.Infrastructure\Farlo.AI.Infrastructure.csproj", "{4E0A2C2D-5DB9-46C8-A18C-F701BEEC2188}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.AI.Domain", "Services\Farlo.AI.Domain\Farlo.AI.Domain\Farlo.AI.Domain.csproj", "{B63B2626-D190-4C71-A82D-D7D75FA9ACAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.AI.Domain", "Services\Farlo.AI.Domain\Farlo.AI.Domain\Farlo.AI.Domain.csproj", "{B63B2626-D190-4C71-A82D-D7D75FA9ACAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
