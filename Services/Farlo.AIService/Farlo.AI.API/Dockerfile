@@ -1,29 +1,31 @@
-# 1. Base image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 8080
 
-# 2. Build image
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+# 1. Doðru klasöre geç — burada .csproj yollarý `../../../` gibi yukarý çýkacak
+WORKDIR /src/Services/Farlo.AIService/Farlo.AI.API
+
+# 2. Sadece .csproj dosyasýný deðil, ona göre baðýmlý projeleri de yukarý klasörlere uygun þekilde kopyala
+COPY Services/Farlo.AIService/Farlo.AI.API/Farlo.AI.API.csproj .
+
+COPY Services/Farlo.AIService/Farlo.AI.Application ../../Farlo.AI.Application
+COPY Services/Farlo.AIService/Farlo.AI.Infrastructure ../../Farlo.AI.Infrastructure
+COPY BuildingBlocks/Farlo.EventContracts ../../../../BuildingBlocks/Farlo.EventContracts
+
+# 3. restore yap (þimdi referans yollarý uyumlu oldu)
+RUN dotnet restore
+
+# 4. tüm kaynaklarý kopyala
 WORKDIR /src
-
-# Projeleri doðru klasörlerden alýyoruz
-COPY ["Services/Farlo.AIService/Farlo.AI.API/Farlo.AI.API.csproj", "Farlo.AI.API/"]
-COPY ["Services/Farlo.AIService/Farlo.AI.Application/Farlo.AI.Application.csproj", "Farlo.AI.Application/"]
-COPY ["Services/Farlo.AIService/Farlo.AI.Infrastructure/Farlo.AI.Infrastructure.csproj", "Farlo.AI.Infrastructure/"]
-COPY ["BuildingBlocks/Farlo.EventContracts/Farlo.EventContracts.csproj", "Farlo.EventContracts/"]
-
-# NuGet restore iþlemi
-RUN dotnet restore "Farlo.AI.API/Farlo.AI.API.csproj"
-
-# Tüm kaynaklarý kopyala
 COPY . .
 
-# Build & publish
-WORKDIR "/src/Farlo.AI.API"
-RUN dotnet publish "Farlo.AI.API.csproj" -c Release -o /app/publish
+# 5. publish
+WORKDIR /src/Services/Farlo.AIService/Farlo.AI.API
+RUN dotnet publish -c Release -o /app/publish
 
-# 3. Final image
+# 6. final image
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
