@@ -3,33 +3,68 @@ version: '3.9'
 services:
   rabbitmq:
     image: rabbitmq:3-management
+    container_name: rabbitmq
     ports:
       - "15672:15672"
       - "5672:5672"
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    networks:
+      - farlo-net
 
   geodataservice:
     build:
       context: .
       dockerfile: Services/Farlo.GeoDataService/Farlo.GeoData.API/Dockerfile
     depends_on:
-      - rabbitmq
+      rabbitmq:
+        condition: service_healthy
     ports:
-      - "5001:80"
+      - "5001:8080"
+    restart: on-failure
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+    networks:
+      - farlo-net
 
   aiservice:
     build:
       context: .
       dockerfile: Services/Farlo.AIService/Farlo.AI.API/Dockerfile
     depends_on:
-      - rabbitmq
+      rabbitmq:
+        condition: service_healthy
     ports:
-      - "5002:80"
+      - "5002:8080"
+    restart: on-failure
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       OPENAI__APIKEY: ${OPENAI__APIKEY}
       OPENAI__MODEL: ${OPENAI__MODEL}
+    networks:
+      - farlo-net
+
+  insightservice:
+    build:
+      context: .
+      dockerfile: Services/Farlo.InsightService/Farlo.Insight.API/Dockerfile
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    ports:
+      - "5003:8080"
+    restart: on-failure
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    networks:
+      - farlo-net
+
+networks:
+  farlo-net:
+    driver: bridge
