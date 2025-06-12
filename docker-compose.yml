@@ -4,8 +4,32 @@ services:
   rabbitmq:
     image: rabbitmq:3-management
     ports:
-      - "5672:5672"
       - "15672:15672"
+      - "5672:5672"
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
+
+  geodataservice:
+    build:
+      context: .
+      dockerfile: Services/Farlo.GeoDataService/Farlo.GeoData.API/Dockerfile
+    depends_on:
+      - rabbitmq
+    ports:
+      - "5001:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+
+  aiservice:
+    build:
+      context: .
+      dockerfile: Services/Farlo.AIService/Farlo.AI.API/Dockerfile
+    depends_on:
+      - rabbitmq
+    ports:
+      - "5002:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      OPENAI__APIKEY: ${OPENAI__APIKEY}
+      OPENAI__MODEL: ${OPENAI__MODEL}
