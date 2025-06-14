@@ -29,6 +29,20 @@ services:
     networks:
       - farlo-net
 
+  postgres-culture:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: culture_db
+      POSTGRES_USER: culture_user
+      POSTGRES_PASSWORD: culture_pass
+    ports:
+      - "5436:5432"
+    volumes:
+      - pgdata_culture:/var/lib/postgresql/data
+    networks:
+      - farlo-net
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -114,6 +128,22 @@ services:
     networks:
       - farlo-net
 
+  cultureservice:
+    build:
+      context: .
+      dockerfile: Services/Farlo.CultureService/Farlo.Culture.API/Dockerfile
+    depends_on:
+      - rabbitmq
+      - postgres-culture
+    ports:
+      - "5005:8080"
+    restart: on-failure
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Host=postgres-culture;Port=5432;Database=culture_db;Username=culture_user;Password=culture_pass
+    networks:
+      - farlo-net
+
 networks:
   farlo-net:
     driver: bridge
@@ -121,3 +151,4 @@ networks:
 volumes:
   insight_postgres_data:
   history_postgres_data:
+  pgdata_culture:
