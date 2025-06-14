@@ -144,7 +144,7 @@ services:
 
   frontend:
     build:
-      context: ../Farlo.Frontend
+      context: ./Farlo.Frontend
       dockerfile: Dockerfile
     ports:
       - "3000:8080"

@@ -53,21 +53,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Insight.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Insight.Domain", "Services\Farlo.InsightService\Farlo.Insight.Domain\Farlo.Insight.Domain.csproj", "{8CA5D6A8-0FF0-4450-B0A2-E69FC576CA42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.History.API", "Services\Farlo.HistoryService\Farlo.History.API\Farlo.History.API.csproj", "{6EE9398E-D379-4D2F-9DA7-BAEA94F646F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.History.API", "Services\Farlo.HistoryService\Farlo.History.API\Farlo.History.API.csproj", "{6EE9398E-D379-4D2F-9DA7-BAEA94F646F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.History.Application", "Services\Farlo.HistoryService\Farlo.History.Application\Farlo.History.Application.csproj", "{DEDF7406-6218-48D5-8267-702788681CC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.History.Application", "Services\Farlo.HistoryService\Farlo.History.Application\Farlo.History.Application.csproj", "{DEDF7406-6218-48D5-8267-702788681CC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.History.Domain", "Services\Farlo.HistoryService\Farlo.History.Domain\Farlo.History.Domain.csproj", "{EF22D791-FCA0-4BB8-91CE-EA60973F9353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.History.Domain", "Services\Farlo.HistoryService\Farlo.History.Domain\Farlo.History.Domain.csproj", "{EF22D791-FCA0-4BB8-91CE-EA60973F9353}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.History.Infrastructure", "Services\Farlo.HistoryService\Farlo.History.Infrastructure\Farlo.History.Infrastructure.csproj", "{BC23EC42-7BCF-4EF1-ADD0-E4D6E0232F74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.History.Infrastructure", "Services\Farlo.HistoryService\Farlo.History.Infrastructure\Farlo.History.Infrastructure.csproj", "{BC23EC42-7BCF-4EF1-ADD0-E4D6E0232F74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Culture.API", "Services\Farlo.CultureService\Farlo.Culture.API\Farlo.Culture.API.csproj", "{2172F70E-CC5C-4CE0-8895-635204DF80DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Culture.API", "Services\Farlo.CultureService\Farlo.Culture.API\Farlo.Culture.API.csproj", "{2172F70E-CC5C-4CE0-8895-635204DF80DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Culture.Application", "Services\Farlo.CultureService\Farlo.Culture.Application\Farlo.Culture.Application.csproj", "{37270F36-041A-42F8-8952-FD2D7EFA4344}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Culture.Application", "Services\Farlo.CultureService\Farlo.Culture.Application\Farlo.Culture.Application.csproj", "{37270F36-041A-42F8-8952-FD2D7EFA4344}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Culture.Domain", "Services\Farlo.CultureService\Farlo.Culture.Domain\Farlo.Culture.Domain.csproj", "{1B5BA7A6-75A9-4694-889D-6A3C23C29DA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Culture.Domain", "Services\Farlo.CultureService\Farlo.Culture.Domain\Farlo.Culture.Domain.csproj", "{1B5BA7A6-75A9-4694-889D-6A3C23C29DA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Culture.Infrastructure", "Services\Farlo.CultureService\Farlo.Culture.Infrastructure\Farlo.Culture.Infrastructure.csproj", "{F72E0DFC-AC02-4BF4-BC3B-058AD33C418C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Culture.Infrastructure", "Services\Farlo.CultureService\Farlo.Culture.Infrastructure\Farlo.Culture.Infrastructure.csproj", "{F72E0DFC-AC02-4BF4-BC3B-058AD33C418C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
