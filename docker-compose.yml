@@ -15,6 +15,20 @@ services:
     networks:
       - farlo-net
 
+  postgres-history:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_DB: history_db
+      POSTGRES_USER: history_user
+      POSTGRES_PASSWORD: history_pass
+    ports:
+      - "5435:5432"
+    volumes:
+      - history_postgres_data:/var/lib/postgresql/data
+    networks:
+      - farlo-net
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -82,9 +96,28 @@ services:
     networks:
       - farlo-net
 
+  historyservice:
+    build:
+      context: .
+      dockerfile: Services/Farlo.HistoryService/Farlo.History.API/Dockerfile
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres-history:
+        condition: service_started
+    ports:
+      - "5004:8080"
+    restart: on-failure
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Host=postgres-history;Port=5432;Database=history_db;Username=history_user;Password=history_pass
+    networks:
+      - farlo-net
+
 networks:
   farlo-net:
     driver: bridge
 
 volumes:
   insight_postgres_data:
+  history_postgres_data:
