@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   postgres-insight:
     image: postgres:15
@@ -141,6 +139,16 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__DefaultConnection: Host=postgres-culture;Port=5432;Database=culture_db;Username=culture_user;Password=culture_pass
+    networks:
+      - farlo-net
+
+  frontend:
+    build:
+      context: ../Farlo.Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:8080"
+    restart: always
     networks:
       - farlo-net
 
