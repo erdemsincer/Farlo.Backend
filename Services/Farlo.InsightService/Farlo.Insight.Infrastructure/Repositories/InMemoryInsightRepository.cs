@@ -1,20 +1,27 @@
 ﻿using Farlo.Insight.Application.Interfaces;
 using Farlo.Insight.Domain.Entities;
+using Farlo.Insight.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Farlo.Insight.Infrastructure.Repositories;
 
 public class InMemoryInsightRepository : IInsightRepository
 {
-    private static readonly List<Domain.Entities.Insight> _storage = new();
+    private readonly InsightDbContext _context;
 
-    public Task SaveAsync(Domain.Entities.Insight insight)
+    public InMemoryInsightRepository(InsightDbContext context)
     {
-        _storage.Add(insight);
-        return Task.CompletedTask;
+        _context = context;
     }
 
-    public Task<List<Domain.Entities.Insight>> GetAllAsync()
+    public async Task SaveAsync(Domain.Entities.Insight insight)
     {
-        return Task.FromResult(_storage);
+        await _context.Insights.AddAsync(insight);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task<List<Domain.Entities.Insight>> GetAllAsync()
+    {
+        return await _context.Insights.ToListAsync();
     }
 }
