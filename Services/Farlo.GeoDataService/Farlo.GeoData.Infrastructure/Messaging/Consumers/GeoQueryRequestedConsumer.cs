@@ -17,14 +17,18 @@ public class GeoQueryRequestedConsumer : IConsumer<GeoQueryRequestedEvent>
 
     public async Task Consume(ConsumeContext<GeoQueryRequestedEvent> context)
     {
+        var message = context.Message;
+
         var (climate, vegetation, elevation) =
-            await _geoDataService.GetGeoDataAsync(context.Message.Latitude, context.Message.Longitude);
+            await _geoDataService.GetGeoDataAsync(message.Latitude, message.Longitude);
 
         await _publishEndpoint.Publish(new GeoQueryCompletedEvent(
-            context.Message.RequestId,
+            message.RequestId,
+            message.Latitude,
+            message.Longitude,
             climate,
             vegetation,
             elevation
-        ));
+        )); 
     }
 }
