@@ -2,8 +2,8 @@
 
 namespace Farlo.History.Application.Interfaces;
 
-public interface IGeoQueryHistoryRepository
+public interface IHistoryRepository
 {
-    Task<GeoQueryHistory?> GetByCoordinatesAsync(double lat, double lon);
     Task SaveAsync(GeoQueryHistory history);
+    Task<List<GeoQueryHistory>> GetAllAsync();
 }
