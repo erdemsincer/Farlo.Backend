@@ -20,4 +20,15 @@ public class InsightController : ControllerBase
         var insights = await _repository.GetAllAsync();
         return Ok(insights);
     }
+    [HttpGet("{requestId}")]
+    public async Task<IActionResult> GetByRequestId(string requestId)
+    {
+        var insights = await _repository.GetAllAsync();
+        var result = insights.FirstOrDefault(x => x.RequestId == requestId);
+
+        if (result is null)
+            return NotFound(new { message = "No insight found for the given RequestId" });
+
+        return Ok(result);
+    }
 }
