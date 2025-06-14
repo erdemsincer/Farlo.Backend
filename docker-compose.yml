@@ -1,6 +1,20 @@
 version: '3.9'
 
 services:
+  postgres-insight:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: insight_user
+      POSTGRES_PASSWORD: insight_pass
+      POSTGRES_DB: insight_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - insight_postgres_data:/var/lib/postgresql/data
+    networks:
+      - farlo-net
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -57,14 +71,20 @@ services:
     depends_on:
       rabbitmq:
         condition: service_healthy
+      postgres-insight:
+        condition: service_started
     ports:
       - "5003:8080"
     restart: on-failure
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Host=postgres-insight;Port=5432;Database=insight_db;Username=insight_user;Password=insight_pass
     networks:
       - farlo-net
 
 networks:
   farlo-net:
     driver: bridge
+
+volumes:
+  insight_postgres_data:
