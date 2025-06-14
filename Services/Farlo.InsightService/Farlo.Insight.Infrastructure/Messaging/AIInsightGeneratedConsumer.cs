@@ -1,5 +1,6 @@
 ﻿using Farlo.EventContracts.AI;
 using Farlo.Insight.Application.Interfaces;
+using Farlo.Insight.Domain.Entities;
 using MassTransit;
 
 namespace Farlo.Insight.Infrastructure.Messaging.Consumers;
@@ -15,11 +16,13 @@ public class AIInsightGeneratedConsumer : IConsumer<AIInsightGeneratedEvent>
 
     public async Task Consume(ConsumeContext<AIInsightGeneratedEvent> context)
     {
-        await _repository.SaveAsync(new()
+        var message = context.Message;
+
+        await _repository.SaveAIInsightAsync(new Domain.Entities.Insight
         {
             Id = Guid.NewGuid(),
-            RequestId = context.Message.RequestId,
-            Summary = context.Message.InsightSummary,
+            RequestId = message.RequestId,
+            Summary = message.InsightSummary,
             CreatedAt = DateTime.UtcNow
         });
     }

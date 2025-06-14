@@ -1,5 +1,6 @@
 ﻿using Farlo.EventContracts.Geo;
 using Farlo.EventContracts.AI;
+using Farlo.EventContracts.Culture;
 using Farlo.AI.Application.Interfaces;
 using MassTransit;
 
@@ -18,11 +19,21 @@ public class GeoQueryCompletedConsumer : IConsumer<GeoQueryCompletedEvent>
 
     public async Task Consume(ConsumeContext<GeoQueryCompletedEvent> context)
     {
-        var insight = await _aiService.GenerateInsightAsync(context.Message);
+        var message = context.Message;
 
+        var generalInsight = await _aiService.GenerateInsightAsync(message);
         await _publishEndpoint.Publish(new AIInsightGeneratedEvent(
-            context.Message.RequestId,
-            insight
+            message.RequestId,
+            generalInsight
+        ));
+
+        var cultureInsight = await _aiService.GenerateCultureInsightAsync(message);
+        await _publishEndpoint.Publish(new CultureInsightGeneratedEvent(
+            message.RequestId,
+            message.Latitude,
+            message.Longitude,
+            cultureInsight
         ));
     }
 }
+

@@ -28,15 +28,47 @@ public class AIService : IAIService
         - Bitki örtüsü: {data.Vegetation}
         - Yükseklik: {data.Elevation}
 
-        Bu verilere dayanarak, bu bölge hakkında 1 paragraf anlamlı, açıklayıcı ve bilgilendirici bir metin oluştur.
+        Bu verilere dayanarak, bu bölge hakkında 1 paragraf anlamlı, açıklayıcı ve bilgilendirici bir coğrafi analiz oluştur.
         """;
 
+        return await SendToOpenAIAsync(prompt);
+    }
+
+    public async Task<string> GenerateCultureInsightAsync(GeoQueryCompletedEvent data)
+    {
+        var prompt = $"""
+    Aşağıdaki veriler bir bölgeye aittir:
+    - İklim: {data.Climate}
+    - Bitki örtüsü: {data.Vegetation}
+    - Rakım: {data.Elevation}
+    - Koordinatlar: ({data.Latitude}, {data.Longitude})
+
+    Bu koordinatlara en yakın şehri belirt. 
+    Ardından bu şehrin veya bölgenin kültürel özelliklerini anlatan, özgün ve açıklayıcı bir metin oluştur. 
+    Metin şu unsurları içermeli:
+    - Yerleşim tipi (köy, kasaba, şehir vb.)
+    - Yaşam tarzı ve gelenekler
+    - Mimarî özellikler (ev tipi, yapı malzemesi vs.)
+    - Yerel festivaller, halk oyunları, geleneksel etkinlikler
+    - Öne çıkan kültürel miraslar veya tarihsel izler
+    - Gezilecek yerler ve doğal güzellikler
+
+    İçerik Türkçe olmalı ve akıcı bir anlatıma sahip olmalı. 
+    Paragrafın sonunda bir cümleyle bu bölgenin kültürel olarak neden önemli olduğunu özetle.
+    """;
+
+        return await SendToOpenAIAsync(prompt);
+    }
+
+
+    private async Task<string> SendToOpenAIAsync(string prompt)
+    {
         var requestBody = new
         {
             model = _settings.Model,
             messages = new[]
             {
-                new { role = "system", content = "Sen coğrafya bilgisi konusunda uzman bir AI'sın." },
+                new { role = "system", content = "Sen uzman bir coğrafya ve kültür danışmanı bir AI'sın." },
                 new { role = "user", content = prompt }
             }
         };

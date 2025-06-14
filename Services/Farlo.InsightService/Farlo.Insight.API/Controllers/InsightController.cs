@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Farlo.Insight.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/insight")]
 public class InsightController : ControllerBase
 {
     private readonly IInsightRepository _repository;
@@ -14,21 +14,17 @@ public class InsightController : ControllerBase
         _repository = repository;
     }
 
-    [HttpGet]
-    public async Task<IActionResult> GetAll()
+    [HttpGet("ai")]
+    public async Task<IActionResult> GetAIInsights()
     {
-        var insights = await _repository.GetAllAsync();
-        return Ok(insights);
+        var data = await _repository.GetAllAIInsightsAsync();
+        return Ok(data);
     }
-    [HttpGet("{requestId}")]
-    public async Task<IActionResult> GetByRequestId(string requestId)
+
+    [HttpGet("culture")]
+    public async Task<IActionResult> GetCultureInsights()
     {
-        var insights = await _repository.GetAllAsync();
-        var result = insights.FirstOrDefault(x => x.RequestId == requestId);
-
-        if (result is null)
-            return NotFound(new { message = "No insight found for the given RequestId" });
-
-        return Ok(result);
+        var data = await _repository.GetAllCultureInsightsAsync();
+        return Ok(data);
     }
 }

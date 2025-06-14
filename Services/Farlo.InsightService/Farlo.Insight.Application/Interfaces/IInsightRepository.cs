@@ -1,9 +1,11 @@
-﻿using Farlo.Insight.Domain.Entities;
-
-namespace Farlo.Insight.Application.Interfaces;
-
-public interface IInsightRepository
+﻿namespace Farlo.Insight.Application.Interfaces
 {
-    Task SaveAsync(Domain.Entities.Insight insight);
-    Task<List<Domain.Entities.Insight>> GetAllAsync();
+    public interface IInsightRepository
+    {
+        Task SaveAIInsightAsync(Domain.Entities.Insight insight);
+        Task<IEnumerable<Domain.Entities.Insight>> GetAllAIInsightsAsync();
+
+        Task SaveCultureInsightAsync(Domain.Entities.CultureInsight insight);
+        Task<IEnumerable<Domain.Entities.CultureInsight>> GetAllCultureInsightsAsync();
+    }
 }

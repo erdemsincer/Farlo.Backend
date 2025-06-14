@@ -1,20 +1,22 @@
-using Farlo.Insight.Application.Interfaces;
-using Farlo.Insight.Infrastructure.Messaging.Consumers;
-using Farlo.Insight.Infrastructure.Persistence;
-using Farlo.Insight.Infrastructure.Repositories;
+using Farlo.Culture.Application.Interfaces;
+using Farlo.Culture.Infrastructure.Messaging.Consumers;
+using Farlo.Culture.Infrastructure.Persistence;
+using Farlo.Culture.Infrastructure.Repositories;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<InsightDbContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+// PostgreSQL connection
+builder.Services.AddDbContext<CultureDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Repository
 builder.Services.AddScoped<IInsightRepository, EFInsightRepository>();
 
+// MassTransit + RabbitMQ
 builder.Services.AddMassTransit(x =>
 {
-    x.AddConsumer<AIInsightGeneratedConsumer>();
     x.AddConsumer<CultureInsightGeneratedConsumer>();
 
     x.UsingRabbitMq((context, cfg) =>
@@ -25,24 +27,21 @@ builder.Services.AddMassTransit(x =>
             h.Password("guest");
         });
 
-        cfg.ReceiveEndpoint("ai-insight-generated-queue", e =>
-        {
-            e.ConfigureConsumer<AIInsightGeneratedConsumer>(context);
-        });
-
-        cfg.ReceiveEndpoint("culture-insight-generated-queue", e =>
+        cfg.ReceiveEndpoint("culture-insight-generated-event", e =>
         {
             e.ConfigureConsumer<CultureInsightGeneratedConsumer>(context);
         });
     });
 });
 
+// Controllers + Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -50,12 +49,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-app.MapControllers();
 
+app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<InsightDbContext>();
+    var db = scope.ServiceProvider.GetRequiredService<CultureDbContext>();
     db.Database.Migrate();
 }
-
 app.Run();

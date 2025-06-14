@@ -9,14 +9,14 @@
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="8.4.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.6" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Farlo.EventContracts\Farlo.EventContracts.csproj" />
-    <ProjectReference Include="..\..\Farlo.CultureService\Farlo.Culture.Domain\Farlo.Culture.Domain.csproj" />
-    <ProjectReference Include="..\Farlo.Insight.Application\Farlo.Insight.Application.csproj" />
-    <ProjectReference Include="..\Farlo.Insight.Domain\Farlo.Insight.Domain.csproj" />
+    <ProjectReference Include="..\Farlo.Culture.Application\Farlo.Culture.Application.csproj" />
+    <ProjectReference Include="..\Farlo.Culture.Domain\Farlo.Culture.Domain.csproj" />
   </ItemGroup>
 
 </Project>
