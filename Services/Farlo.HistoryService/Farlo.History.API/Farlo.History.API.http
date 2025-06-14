@@ -1,0 +1,6 @@
+@Farlo.History.API_HostAddress = http://localhost:5207
+
+GET {{Farlo.History.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

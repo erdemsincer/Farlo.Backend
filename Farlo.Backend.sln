@@ -45,13 +45,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.AI.Infrastructure", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Farlo.InsightService", "Farlo.InsightService", "{6A02AE1D-870C-4C63-B918-43A246744612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Insight.API", "Services\Farlo.InsightService\Farlo.Insight.API\Farlo.Insight.API.csproj", "{99A8DE91-A632-44F2-B8FF-70236983B058}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Insight.API", "Services\Farlo.InsightService\Farlo.Insight.API\Farlo.Insight.API.csproj", "{99A8DE91-A632-44F2-B8FF-70236983B058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Insight.Application", "Services\Farlo.InsightService\Farlo.Insight.Application\Farlo.Insight.Application.csproj", "{AFAC6577-A6F6-4973-98FD-5C4EC72150D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Insight.Application", "Services\Farlo.InsightService\Farlo.Insight.Application\Farlo.Insight.Application.csproj", "{AFAC6577-A6F6-4973-98FD-5C4EC72150D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Insight.Infrastructure", "Services\Farlo.InsightService\Farlo.Insight.Infrastructure\Farlo.Insight.Infrastructure.csproj", "{B2BB85EE-00FC-44FE-9ED2-23D2DF50312A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Insight.Infrastructure", "Services\Farlo.InsightService\Farlo.Insight.Infrastructure\Farlo.Insight.Infrastructure.csproj", "{B2BB85EE-00FC-44FE-9ED2-23D2DF50312A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.Insight.Domain", "Services\Farlo.InsightService\Farlo.Insight.Domain\Farlo.Insight.Domain.csproj", "{8CA5D6A8-0FF0-4450-B0A2-E69FC576CA42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Farlo.Insight.Domain", "Services\Farlo.InsightService\Farlo.Insight.Domain\Farlo.Insight.Domain.csproj", "{8CA5D6A8-0FF0-4450-B0A2-E69FC576CA42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.History.API", "Services\Farlo.HistoryService\Farlo.History.API\Farlo.History.API.csproj", "{6EE9398E-D379-4D2F-9DA7-BAEA94F646F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.History.Application", "Services\Farlo.HistoryService\Farlo.History.Application\Farlo.History.Application.csproj", "{DEDF7406-6218-48D5-8267-702788681CC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.History.Domain", "Services\Farlo.HistoryService\Farlo.History.Domain\Farlo.History.Domain.csproj", "{EF22D791-FCA0-4BB8-91CE-EA60973F9353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farlo.History.Infrastructure", "Services\Farlo.HistoryService\Farlo.History.Infrastructure\Farlo.History.Infrastructure.csproj", "{BC23EC42-7BCF-4EF1-ADD0-E4D6E0232F74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +119,22 @@ Global
 		{8CA5D6A8-0FF0-4450-B0A2-E69FC576CA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CA5D6A8-0FF0-4450-B0A2-E69FC576CA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CA5D6A8-0FF0-4450-B0A2-E69FC576CA42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE9398E-D379-4D2F-9DA7-BAEA94F646F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE9398E-D379-4D2F-9DA7-BAEA94F646F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE9398E-D379-4D2F-9DA7-BAEA94F646F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE9398E-D379-4D2F-9DA7-BAEA94F646F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDF7406-6218-48D5-8267-702788681CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDF7406-6218-48D5-8267-702788681CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDF7406-6218-48D5-8267-702788681CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDF7406-6218-48D5-8267-702788681CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF22D791-FCA0-4BB8-91CE-EA60973F9353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF22D791-FCA0-4BB8-91CE-EA60973F9353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF22D791-FCA0-4BB8-91CE-EA60973F9353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF22D791-FCA0-4BB8-91CE-EA60973F9353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC23EC42-7BCF-4EF1-ADD0-E4D6E0232F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC23EC42-7BCF-4EF1-ADD0-E4D6E0232F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC23EC42-7BCF-4EF1-ADD0-E4D6E0232F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC23EC42-7BCF-4EF1-ADD0-E4D6E0232F74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +160,10 @@ Global
 		{AFAC6577-A6F6-4973-98FD-5C4EC72150D9} = {6A02AE1D-870C-4C63-B918-43A246744612}
 		{B2BB85EE-00FC-44FE-9ED2-23D2DF50312A} = {6A02AE1D-870C-4C63-B918-43A246744612}
 		{8CA5D6A8-0FF0-4450-B0A2-E69FC576CA42} = {6A02AE1D-870C-4C63-B918-43A246744612}
+		{6EE9398E-D379-4D2F-9DA7-BAEA94F646F6} = {868F1C5D-4336-446C-AF5E-43D635025BAC}
+		{DEDF7406-6218-48D5-8267-702788681CC5} = {868F1C5D-4336-446C-AF5E-43D635025BAC}
+		{EF22D791-FCA0-4BB8-91CE-EA60973F9353} = {868F1C5D-4336-446C-AF5E-43D635025BAC}
+		{BC23EC42-7BCF-4EF1-ADD0-E4D6E0232F74} = {868F1C5D-4336-446C-AF5E-43D635025BAC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {156EEC8B-AAC3-4DDC-B29C-AA8912887B9A}
