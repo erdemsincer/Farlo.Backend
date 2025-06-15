@@ -45,11 +45,11 @@ Harita üzerinden seçilen herhangi bir konum için **OpenAI GPT-4** kullanarak 
 
 ## 🖼️ Uygulama Ekran Görüntüleri
 
-### 🏠 Ana Sayfa
-![Home](https://github.com/user-attachments/assets/9c1573f0-3b10-4cdb-b7e4-efd26ecc71b6)
-
 ### 🗺️ Harita Sayfası
 ![Map](https://github.com/user-attachments/assets/17323092-ef1a-4660-982c-3495a5366519)
+
+### 🏠 Ana Sayfa
+![Home](https://github.com/user-attachments/assets/9c1573f0-3b10-4cdb-b7e4-efd26ecc71b6)
 
 ### 🤖 AI Analizleri
 ![AI](https://github.com/user-attachments/assets/a1ce2bdd-c75e-4e00-89b7-6217188f0f5c)
