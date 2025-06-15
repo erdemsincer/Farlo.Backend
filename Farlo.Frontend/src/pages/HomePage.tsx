@@ -1,7 +1,7 @@
 const HomePage = () => {
     return (
       <div className="min-h-[calc(100vh-64px)] w-full flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 px-4 sm:px-8">
-        <div className="text-center max-w-3xl">
+        <div className="text-center w-full">
           {/* Başlık */}
           <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow">
             Hoş Geldin <span className="inline-block animate-waving-hand">👋</span>
